@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header Start-->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home" class="block py-6"
+              ><img src="assets/logo.png" alt="logo"
+            /></a>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4"
+            >
+              <span
+                class="w-[30px] h-[2px] my-2 block origin-top-left bg-dark transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="w-[30px] h-[2px] my-2 block bg-dark transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="w-[30px] origin-bottom-left h-[2px] my-2 block bg-dark transition duration-300 ease-in-out"
+              ></span>
+            </button>
+            <nav
+              id="menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full"
+            >
+              <ul class="block">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    >About Me</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#certificate"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    >Certificate</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#experience"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    >Experience</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End-->
+
+    <!-- Hero Section Start-->
+    
+    <section id="home" class="pt-36 text-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <!-- Left Column (lg:w-1/2) -->
+          <div class="w-full lg:w-1/2 self-center px-4">
+            <h3 class="text-3xl font-semibold lg:text-3xl">HELLO, I'M A</h3>
+            <h1 class="text-4xl font-bold pb-4 lg:text-6xl">
+              Website <span class="text-primary">Developer</span>
+            </h1>
+            <h3 class="font-semibold lg:text-xl">
+              Hi I’m,
+              <span
+                class="bg-gradient-to-r from-green-500 to-slate-200 bg-clip-text text-transparent"
+                >Fabyan Yastika Permana.</span
+              >
+              A passionate Web Developer based in Indonesia. Welcome to my
+              portoflio world!
+            </h3>
+            <div
+              class="mx-auto w-10 h-10 bg-primary rounded-full flex cursor-pointer -translate-x-1/2"
+            >
+              <a
+                href="#"
+                class="text-2xl text-sky-400 m-auto hover:shadow-lg hover:opacity-50 transition duration-300 ease-in-out"
+                ><img
+                  src="assets/icons8-arrow-down.gif"
+                  id="preventNewTab1"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+          <div class="lg:mt-9 lg:right-0">
+            <span class="ml-auto">
+              <!-- Use ml-auto here -->
+              <img
+                src="assets/hero-dktp.png"
+                id="preventNewTab2"
+                class="max-w-full ml-12 lg:w-[500px]"
+                width="400px"
+                alt=""
+              />
+            </span>
+          </div>
+          <!-- Right Column (lg:w-1/2) -->
+          <!-- <div class="w-12 lg:w-1/2 "> -->
+          <!-- <div class="relative mt-2"> -->
+
+          <!-- <img src="assets/bg-1.png" alt="" width="250px" height="250px"> -->
+          <!-- </div> -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-about">
+      <div class="-mt-[167px] w-full lg:-mt-[330px]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#F0FCFA"
+            fill-opacity="1"
+            d="M0,32L80,37.3C160,43,320,53,480,90.7C640,128,800,192,960,218.7C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:right-0 lg:mt-9 mx-auto">
+              <img
+                src="assets/abt.png"
+                alt="Sandhika Galih"
+                class="relative z-10 mx-auto max-w-full"
+              />
+            </div>
+          </div>
+          <div class="w-full self-end px-4 lg:w-1/2 pl-10">
+            <h2 class="font-bold tracking-wide lg:text-3xl">Who Am I?</h2>
+            <h1 class="text-4xl font-bold text-primary lg:text-7xl uppercase">
+              About Me
+            </h1>
+            <div class="relative mt-10 lg:right-0 lg:mt-9">
+              <div class="1">
+                <h2><b>Description About Me...</b></h2>
+                <p>
+                  Best Software Engineering graduates who have a high interest
+                  in programming. Have a good understanding of website
+                  development and database management. Skilled in PHP and
+                  Javascript programming languages and familiar with HTML, CSS
+                  as a website body with SQL as a database. Have experience
+                  working on freelance projects to create and develop UI
+                  interfaces for web and applications.
+                </p>
+                <h2 class="mt-3 -mb-5">
+                  <b>Click More About Me Here</b>
+                  <img
+                    src="assets/panah-bwh.png"
+                    width="30px"
+                    id="preventNewTab2"
+                    alt=""
+                    class="inline animate-bounce"
+                  />
+                  <script>
+                    document
+                      .getElementById("preventNewTab1")
+                      .addEventListener("contextmenu", function (e) {
+                        e.preventDefault();
+                      });
+                  </script>
+                </h2>
+
+                <p></p>
+              </div>
+              <div class="btn pt-6">
+                <!-- <a href="" class="bg-primary rounded-sm w-20 h-20 p-3 text-slate-100 font-semibold">DOWNLOAD CV</a> -->
+                <a
+                  href="#"
+                  class="bg-primary text-white p-2.5 rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                  >PDF</a
+                >
+                <a
+                  href="#"
+                  class="ml-5 inline-block border border-primary text-primary p-2 rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                >
+                  DOWNLOAD CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <div class="mb-96"></div>
+    <!-- Hero Section End-->
+    <script src="dist/script.js"></script>
+  </body>
+</html>

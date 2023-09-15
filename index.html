@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/add.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Jost:ital,wght@0,200;0,400;0,500;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css"
+    /> -->
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+  </head>
+  <body>
+    <!-- Header Start-->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home" class="block py-6"
+              ><img src="assets/logofix.png" alt="logo"
+            /></a>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="w-[30px] h-[2px] my-2 block origin-top-left bg-white transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="w-[30px] h-[2px] my-2 block bg-white transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="w-[30px] origin-bottom-left h-[2px] my-2 block bg-white transition duration-300 ease-in-out"
+              ></span>
+            </button>
+
+            <nav
+              id="menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="text-base text-dark py-2 mx-3 flex transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 hover:bg-white hover:text-primary hover:p-1 hover:rounded-sm duration-100"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base text-dark py-2 mx-3 flex transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 hover:bg-white hover:text-primary hover:p-1 hover:rounded-sm duration-100"
+                    >About Me</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="text-base text-dark py-2 mx-3 flex transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 hover:bg-white hover:text-primary hover:p-1 hover:rounded-sm duration-100"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#certificate"
+                    class="text-base text-dark py-2 mx-3 flex transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 hover:bg-white hover:text-primary hover:p-1 hover:rounded-sm duration-100"
+                    >Certificate</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#experience"
+                    class="text-base text-dark py-2 mx-3 flex transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 hover:bg-white hover:text-primary hover:p-1 hover:rounded-sm duration-100"
+                    >Experience</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="text-base text-dark py-2 mx-3 flex mr-[150px] transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 hover:bg-white hover:text-primary hover:p-1 hover:rounded-sm duration-100"
+                    >Contact</a
+                  >
+                </li>
+                <li class="group pl-20">
+                  <div class="flex flex-wrap mx-6">
+                    <a
+                      href="https://linkedin.com/in/fabyan-yastika-permana"
+                      target="_blank"
+                    >
+                      <div
+                        class="hover:bg-primary hover:border hover:border-white fill-white rounded-full"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          class="p-[7px] w-20 h-20 md:w-8 md:h-8 hidden md:flex"
+                          viewBox="0 0 50 50"
+                          style="fill: #ffffff"
+                        >
+                          <path
+                            d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li class="group mt-6 md:mt-0 hidden md:flex">
+                  <a
+                    class="w-full p-4 bg-primary border hover:bg-white hover:text-primary border-slate-300 text-white rounded"
+                    href=""
+                    >CONTACT ME</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <div class="flex justify-end items-end  -z-99000">
+      <div class="w-1/3 h-[400px] bg-primary">TES</div>
+    </div> -->
+    <!-- Header End-->
+    <div class="area -mb-[780px] md:-mb-[650px]">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- Hero Section Start-->
+    <!-- <div class="relative">  -->
+    <div
+      class="absolute inset-y-0 right-0 w-1/2 h-full md:w-1/3 hidden md:flex bg-primary z-[-3] justify-center items-center"
+    >
+      <img
+        src="assets/icon/2.png"
+        class="w-[100px] md:w-[200px] -ml-20"
+        alt=""
+      />
+    </div>
+    <div
+      class="z-[-99999] absolute inset-0 hidden md:flex justify-center items-center"
+    >
+      <img
+        src="assets/icon/1.png"
+        class="w-[100px] md:w-[200px] -ml-14 md:mr-[-230px]"
+        alt=""
+      />
+    </div>
+    <div class="z-[-99999] absolute inset-0 flex justify-center items-center">
+      <!-- <h1>COK</h1> -->
+      <img
+        src="assets/icon/Group 14.png"
+        class="w-[40px] md:w-[50px] -ml-10 md:mr-[-230px]"
+        alt=""
+      />
+    </div>
+    <section id="home" class="pt-20 md:pt-1 text-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <!-- Left Column (lg:w-1/2) -->
+          <div class="w-full lg:w-1/2 self-center px-4 relative">
+            <!-- <h3
+              class="text-3xl font-semibold lg:text-3xl -rotate-[50deg] absolute top-0 mb-20 md:-mt-20"
+            >
+              HELLO
+            </h3> -->
+            <!-- <h3 class="text-3xl font-semibold lg:text-3xl">HELLO, I'M A</h3> -->
+            <div data-aos="fade-up-right" data-aos-duration="1000">
+              <h1
+                class="text-xl font-jost font-bold pb-4 mt-6 md:text-2xl md:-mt-52 text-white"
+              >
+                Fabyan Yastika Permana.
+              </h1>
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
+              <h3 class="font-semibold text-5xl">
+                a
+                <span class="w-6 bg-gradient-to-r from-white rounded-sm"
+                  >happy</span
+                >
+                website developer
+              </h3>
+            </div>
+
+            <h3 class="font-semibold mt-4 md:text-2xl md:mt-4 hidden md:flex">
+              <!-- <span
+                class="bg-gradient-to-r from-green-500 to-slate-200 bg-clip-text text-transparent"
+                >Website Developer</span> -->
+              who have experience in several projects and seeking full-time or
+              part-time job opportunities.
+            </h3>
+            <div
+              data-aos="fade-left"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
+              <h3 class="mt-4 md:text-2xl md:mt-4 md:hidden">
+                who have 2 years experience on learning and work as freelancer
+                website development.
+              </h3>
+            </div>
+            <div
+              class="mx-auto w-10 h-10 bg-primary rounded-full flex cursor-pointer my-6"
+            >
+              <a href="#about" class="text-2xl text-sky-400 m-auto">
+                <img
+                  src="assets/icon/arr.png"
+                  id="preventNewTab1"
+                  alt=""
+                  class="animate-bounce"
+                />
+              </a>
+            </div>
+            <h3
+              class="mt-4 md:text-2xl md:mt-4 hidden md:flex p-4 rounded-sm text-white"
+            >
+              2 years of experience on learning and work as freelancer website
+              development.
+            </h3>
+          </div>
+          <div class="lg:mt-9 -mt-10 lg:right-0">
+            <span class="ml-auto">
+              <!-- Use ml-auto here -->
+              <img
+                src="assets/transparent_photo.png"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                id="preventNewTab2"
+                class="max-w-full ml-24 mt-10 md:mt-0 md:ml-12 w-[200px] lg:w-[550px]"
+                alt=""
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End-->
+    <div class="absolute inset-0 h-[900px] bg-primary -z-[9999]"></div>
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-20 bg-about"
+      data-aos="fade-up"
+      data-aos-duration="100"
+    >
+      <div class="-mt-[161px] w-full lg:-mt-[330px]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#F0FCFA"
+            fill-opacity="1"
+            d="M0,32L80,37.3C160,43,320,53,480,90.7C640,128,800,192,960,218.7C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path>
+        </svg>
+
+        <div class="container"></div>
+        <!-- <div class="absolute inset-0 mt-[800px] md:mt-[700px] ml-64">
+          <h2 class="text-green-500 text-xl font-semibold uppercase">Tech Stack</h2>
+        </div> -->
+        <div class="flex items-center justify-center animate-pulse">
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[850px] ml-[60px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/larav.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[1300px] ml-[100px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/htm.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[1225px] ml-[140px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/css.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[1150px] ml-[190px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/js.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[1075px] ml-[240px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/php.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[1000px] ml-[300px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/tailwind.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 mt-[700px] md:mt-[925px] ml-[360px] md:ml-20"
+          >
+            <img
+              src="assets/Tech Stack/btr.png"
+              class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+              alt=""
+            />
+          </div>
+          <!-- <div class="absolute inset-0 mt-[800px] md:mt-[750px] ml-[360px] md:ml-20">
+          <img
+            src="assets/Tech Stack/sql.png"
+            class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+            alt=""
+          />
+        </div> -->
+        </div>
+        <!-- <div class="absolute inset-0 mt-[800px] md:mt-[760px] ml-[380px] md:ml-20">
+          <img
+            src="assets/Tech Stack/larav.png"
+            class="md:w-[75px] w-[50px] -ml-14 md:mr-[-230px]"
+            alt=""
+          />
+        </div> -->
+        <div class="flex flex-wrap">
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:right-0 lg:mt-9 mx-auto">
+              <img
+                src="assets/abt.png"
+                alt="Sandhika Galih"
+                class="relative z-10 mx-auto max-w-full"
+              />
+            </div>
+          </div>
+
+          <div class="w-full self-end px-4 lg:w-1/2 pl-10">
+            <h2 class="font-bold tracking-wide lg:text-3xl">Who Am I?</h2>
+            <h1 class="text-4xl font-bold text-primary lg:text-7xl uppercase">
+              About Me
+            </h1>
+            <div class="relative mt-10 lg:right-0 lg:mt-9">
+              <div class="1">
+                <h2><b>Description About Me...</b></h2>
+                <p>
+                  Best Software Engineering graduates who have a high interest
+                  in programming. Have a good understanding of website
+                  development and database management. Skilled in PHP and
+                  Javascript programming languages and familiar with HTML, CSS
+                  as a website body with SQL as a database. Have experience
+                  working on freelance projects to create and develop UI
+                  interfaces for web and applications.
+                </p>
+                <h2 class="mt-3 -mb-5">
+                  <b>Click More About Me Here</b>
+                  <img
+                    src="assets/panah-bwh.png"
+                    width="30px"
+                    id="preventNewTab2"
+                    alt=""
+                    class="inline animate-bounce"
+                  />
+                  <script>
+                    document
+                      .getElementById("preventNewTab1")
+                      .addEventListener("contextmenu", function (e) {
+                        e.preventDefault();
+                      });
+                  </script>
+                </h2>
+
+                <p></p>
+              </div>
+              <div class="btn pt-6">
+                <!-- <a href="" class="bg-primary rounded-sm w-20 h-20 p-3 text-slate-100 font-semibold">DOWNLOAD CV</a> -->
+                <a
+                  href="docs/Portfolio Fabyan 2023.pdf"
+                  target="_blank"
+                  class="bg-primary text-white p-2.5 rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                  >PDF</a
+                >
+                <a
+                  href="docs/CV - Fabyan Yastika Permana (PROG).pdf"
+                  target="_blank"
+                  class="ml-5 inline-block border border-primary text-primary p-2 rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                >
+                  DOWNLOAD CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End-->
+
+    <!-- Portfolio Start -->
+    <section id="portfolio" class="pt-10 pb-16 bg-primary">
+      <div class="container mr-5">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold font-jost text-2xl text-white uppercase">
+              Portfolio
+            </h4>
+            <h2 class="font-bold font-caveat text-dark text-3xl mb-4">
+              <span class="text-slate-100">My   </span>Recent Projects
+            </h2>
+          </div>
+        </div>
+        <div class="w-full px-10">
+          <div class="flex flex-wrap md:flex-nowrap md:gap-3 justify-center">
+            <div
+              id="card-container"
+              class="mb-5 p-4 md:w-1/3 bg-white rounded-lg"
+            >
+              <div class="rounded-lg overflow-hidden">
+                <div
+                  class="hover:scale-105 transition-transform duration-300 ease-in-out transform origin-center"
+                >
+                  <img
+                    src="https://source.unsplash.com/1000x600"
+                    class="w-full rounded-lg"
+                    alt=""
+                  />
+                </div>
+                <h2 class="text-primary font-bold uppercase mt-3">WEBSITE</h2>
+                <h3 class="font-semibold text-xl text-dark mt-2 mb-3">
+                  My #1 Projects
+                </h3>
+                <p class="font-medium text-base text-secondary">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Odit, consequatur.
+                </p>
+              </div>
+              
+            </div>
+            <div
+              id="card-container"
+              class="mb-5 p-4 md:w-1/3 bg-white rounded-lg"
+            >
+              <div class="rounded-lg overflow-hidden">
+                <div
+                  class="hover:scale-105 transition-transform duration-300 ease-in-out transform origin-center"
+                >
+                  <img
+                    src="https://source.unsplash.com/1000x600"
+                    class="w-full rounded-lg"
+                    alt=""
+                  />
+                </div>
+                <h2 class="text-primary font-bold uppercase mt-3">WEBSITE</h2>
+                <h3 class="font-semibold text-xl text-dark mt-2 mb-3">
+                  My #1 Projects
+                </h3>
+                <p class="font-medium text-base text-secondary">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Odit, consequatur.
+                </p>
+              </div>
+            </div>
+            <div
+              id="card-container"
+              class="mb-5 p-4 md:w-1/3 bg-white rounded-lg"
+            >
+              <div class="rounded-lg overflow-hidden">
+                <div
+                  class="hover:scale-105 transition-transform duration-300 ease-in-out transform origin-center"
+                >
+                  <img
+                    src="https://source.unsplash.com/1000x600"
+                    class="w-full rounded-lg"
+                    alt=""
+                  />
+                </div>
+                <h2 class="text-primary font-bold uppercase mt-3">WEBSITE</h2>
+                <h3 class="font-semibold text-xl text-dark mt-2 mb-3">
+                  My #1 Projects
+                </h3>
+                <p class="font-medium text-base text-secondary">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Odit, consequatur.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Batas -->
+          <!-- <button id="show-more-btn" class="bg-primary text-white font-semibold px-4 py-2 rounded-lg">Show More</button>
+                <div class="flex flex-wrap justify-center">\ -->
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio End -->
+
+    <!-- Certificate Start -->
+    <section id="certificate" class="pt-10 pb-16 bg-slate-100">
+      <div class="container">
+        <div class="w-full">
+          <div class="max-w-xl mb-5 flex">
+            <h4 class="font-semibold text-2xl text-white uppercase">
+              Certificate
+            </h4>
+            <div class="flex items-center ml-10 md:ml-80">
+              <div class="w-40 md:w-[700px] rounded-sm h-2 bg-primary"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Slider main container -->
+        <swiper-container
+          class="mySwiper"
+          pagination="true"
+          pagination-clickable="true"
+          slides-per-view="2"
+          space-between="30"
+          free-mode="true"
+        >
+          <swiper-slide
+            ><img
+              class="rounded-lg"
+              src="https://source.unsplash.com/1000x600"
+              alt=""
+          /></swiper-slide>
+          <swiper-slide
+            ><img
+              class="rounded-lg"
+              src="https://source.unsplash.com/1000x600"
+              alt=""
+          /></swiper-slide>
+          <swiper-slide
+            ><img
+              class="rounded-lg"
+              src="https://source.unsplash.com/1000x600"
+              alt=""
+          /></swiper-slide>
+          <swiper-slide
+            ><img
+              class="rounded-lg"
+              src="https://source.unsplash.com/1000x600"
+              alt=""
+          /></swiper-slide>
+          <swiper-slide
+            ><img
+              class="rounded-lg"
+              src="https://source.unsplash.com/1000x600"
+              alt=""
+          /></swiper-slide>
+        </swiper-container>
+      </div>
+    </section>
+    <!-- Certificate End -->
+
+    <!-- Experience Start -->
+    <section id="experience" class="pt-10 pb-1 bg-green-500">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-2xl text-white uppercase">
+              Portfolio
+            </h4>
+            <h2 class="font-bold text-dark text-3xl mb-4">
+              My Recent Projects
+            </h2>
+          </div>
+        </div>
+        <div
+          class="flex w-full flex-wrap justify-center md:flex-nowrap md:gap-3"
+        >
+          <!-- <div class="flex flex-wrap justify-center"> -->
+          <div id="accordionFlushExample" class="rounded-lg w-full md:w-1/2">
+            <div
+              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
+            >
+              <h1 class="text-center uppercase text-xl">
+                Education & Training
+              </h1>
+
+              <h2 class="mb-0" id="flush-headingOne">
+                <button
+                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target="#pertama"
+                  aria-expanded="false"
+                  aria-controls="pertama"
+                >
+                  Accordion Item #1
+                  <span
+                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="pertama"
+                class="rounded-lg border-solid border-b-4 border-indigo-600"
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby="flush-headingOne"
+                data-te-parent="#accordionFlushExample"
+              >
+                <div class="px-5 py-4">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                  <code>.accordion-flush</code> class. This is the first item's
+                  accordion body.
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
+            >
+              <h2 class="mb-0" id="flush-headingOne">
+                <button
+                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target="#pertama"
+                  aria-expanded="false"
+                  aria-controls="pertama"
+                >
+                  Accordion Item #1
+                  <span
+                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="pertama"
+                class="rounded-lg border-solid border-b-4 border-indigo-600"
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby="flush-headingOne"
+                data-te-parent="#accordionFlushExample"
+              >
+                <div class="px-5 py-4">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                  <code>.accordion-flush</code> class. This is the first item's
+                  accordion body.
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
+            >
+              <h2 class="mb-0" id="flush-headingOne">
+                <button
+                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target="#pertama"
+                  aria-expanded="false"
+                  aria-controls="pertama"
+                >
+                  Accordion Item #1
+                  <span
+                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="pertama"
+                class="rounded-lg border-solid border-b-4 border-indigo-600"
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby="flush-headingOne"
+                data-te-parent="#accordionFlushExample"
+              >
+                <div class="px-5 py-4">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                  <code>.accordion-flush</code> class. This is the first item's
+                  accordion body.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="accordionFlushExample" class="rounded-lg w-full md:w-1/2">
+            <div
+              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
+            >
+              <h1 class="text-center uppercase text-xl">Experience</h1>
+
+              <h2 class="mb-0" id="flush-headingOne">
+                <button
+                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target="#pertama"
+                  aria-expanded="false"
+                  aria-controls="pertama"
+                >
+                  Accordion Item #1
+                  <span
+                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="pertama"
+                class="rounded-lg border-solid border-b-4 border-indigo-600"
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby="flush-headingOne"
+                data-te-parent="#accordionFlushExample"
+              >
+                <div class="px-5 py-4">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                  <code>.accordion-flush</code> class. This is the first item's
+                  accordion body.
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
+            >
+              <h2 class="mb-0" id="flush-headingOne">
+                <button
+                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target="#pertama"
+                  aria-expanded="false"
+                  aria-controls="pertama"
+                >
+                  Accordion Item #1
+                  <span
+                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="pertama"
+                class="rounded-lg border-solid border-b-4 border-indigo-600"
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby="flush-headingOne"
+                data-te-parent="#accordionFlushExample"
+              >
+                <div class="px-5 py-4">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                  <code>.accordion-flush</code> class. This is the first item's
+                  accordion body.
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
+            >
+              <h2 class="mb-0" id="flush-headingOne">
+                <button
+                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target="#pertama"
+                  aria-expanded="false"
+                  aria-controls="pertama"
+                >
+                  Accordion Item #1
+                  <span
+                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="pertama"
+                class="rounded-lg border-solid border-b-4 border-indigo-600"
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby="flush-headingOne"
+                data-te-parent="#accordionFlushExample"
+              >
+                <div class="px-5 py-4">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                  <code>.accordion-flush</code> class. This is the first item's
+                  accordion body.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BATAS -->
+      </div>
+    </section>
+    <!-- Experience End -->
+
+    <!-- Contact Start -->
+    <section id="contact" class="pt-10 pb-1 bg-white">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-2xl text-slate-400 uppercase">
+              Contact Me
+            </h4>
+            <h2 class="font-bold text-dark text-3xl mb-4">
+              Lets Talk About an Ideas!
+            </h2>
+          </div>
+        </div>
+        <div
+          class="flex w-full flex-wrap justify-center md:flex-nowrap md:gap-3"
+        >
+          <div class="w-full md:w-1/2">
+            <div class="flex flex-wrap mb-11">
+              <div class="border border-slate-400 rounded-full">
+                <svg
+                  style="padding: 15px"
+                  class="w-12 h-12 md:w-16 md:h-16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.2721 10.2721C16.2721 12.4813 14.4813 14.2721 12.2721 14.2721C10.063 14.2721 8.27214 12.4813 8.27214 10.2721C8.27214 8.06298 10.063 6.27212 12.2721 6.27212C14.4813 6.27212 16.2721 8.06298 16.2721 10.2721ZM14.2721 10.2721C14.2721 11.3767 13.3767 12.2721 12.2721 12.2721C11.1676 12.2721 10.2721 11.3767 10.2721 10.2721C10.2721 9.16755 11.1676 8.27212 12.2721 8.27212C13.3767 8.27212 14.2721 9.16755 14.2721 10.2721Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.79417 16.5183C2.19424 13.0909 2.05438 7.39409 5.48178 3.79417C8.90918 0.194243 14.6059 0.054383 18.2059 3.48178C21.8058 6.90918 21.9457 12.6059 18.5183 16.2059L12.3124 22.7241L5.79417 16.5183ZM17.0698 14.8268L12.243 19.8965L7.17324 15.0698C4.3733 12.404 4.26452 7.97318 6.93028 5.17324C9.59603 2.3733 14.0268 2.26452 16.8268 4.93028C19.6267 7.59603 19.7355 12.0268 17.0698 14.8268Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="bg-slate-400 w-14 h-1 self-center mr-6"></div>
+              <!-- <div class="w-full pt-10"> -->
+              <div class="max-w-xl">
+                <h4 class="font-semibold uppercase mt-4">Portfolio</h4>
+                <h2 class="font-bold">My Recent Projects</h2>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="flex flex-wrap mb-11">
+              <div class="border border-slate-400 rounded-full">
+                <svg
+                  style="padding: 15px"
+                  class="w-12 h-12 md:w-16 md:h-16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.2721 10.2721C16.2721 12.4813 14.4813 14.2721 12.2721 14.2721C10.063 14.2721 8.27214 12.4813 8.27214 10.2721C8.27214 8.06298 10.063 6.27212 12.2721 6.27212C14.4813 6.27212 16.2721 8.06298 16.2721 10.2721ZM14.2721 10.2721C14.2721 11.3767 13.3767 12.2721 12.2721 12.2721C11.1676 12.2721 10.2721 11.3767 10.2721 10.2721C10.2721 9.16755 11.1676 8.27212 12.2721 8.27212C13.3767 8.27212 14.2721 9.16755 14.2721 10.2721Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.79417 16.5183C2.19424 13.0909 2.05438 7.39409 5.48178 3.79417C8.90918 0.194243 14.6059 0.054383 18.2059 3.48178C21.8058 6.90918 21.9457 12.6059 18.5183 16.2059L12.3124 22.7241L5.79417 16.5183ZM17.0698 14.8268L12.243 19.8965L7.17324 15.0698C4.3733 12.404 4.26452 7.97318 6.93028 5.17324C9.59603 2.3733 14.0268 2.26452 16.8268 4.93028C19.6267 7.59603 19.7355 12.0268 17.0698 14.8268Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="bg-slate-400 w-14 h-1 self-center mr-6"></div>
+              <!-- <div class="w-full pt-10"> -->
+              <div class="max-w-xl">
+                <h4 class="font-semibold uppercase mt-4">Portfolio</h4>
+                <h2 class="font-bold">My Recent Projects</h2>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="flex flex-wrap mb-11">
+              <div class="border border-slate-400 rounded-full">
+                <svg
+                  style="padding: 15px"
+                  class="w-12 h-12 md:w-16 md:h-16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.2721 10.2721C16.2721 12.4813 14.4813 14.2721 12.2721 14.2721C10.063 14.2721 8.27214 12.4813 8.27214 10.2721C8.27214 8.06298 10.063 6.27212 12.2721 6.27212C14.4813 6.27212 16.2721 8.06298 16.2721 10.2721ZM14.2721 10.2721C14.2721 11.3767 13.3767 12.2721 12.2721 12.2721C11.1676 12.2721 10.2721 11.3767 10.2721 10.2721C10.2721 9.16755 11.1676 8.27212 12.2721 8.27212C13.3767 8.27212 14.2721 9.16755 14.2721 10.2721Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.79417 16.5183C2.19424 13.0909 2.05438 7.39409 5.48178 3.79417C8.90918 0.194243 14.6059 0.054383 18.2059 3.48178C21.8058 6.90918 21.9457 12.6059 18.5183 16.2059L12.3124 22.7241L5.79417 16.5183ZM17.0698 14.8268L12.243 19.8965L7.17324 15.0698C4.3733 12.404 4.26452 7.97318 6.93028 5.17324C9.59603 2.3733 14.0268 2.26452 16.8268 4.93028C19.6267 7.59603 19.7355 12.0268 17.0698 14.8268Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="bg-slate-400 w-14 h-1 self-center mr-6"></div>
+              <!-- <div class="w-full pt-10"> -->
+              <div class="max-w-xl">
+                <h4 class="font-semibold uppercase mt-4">Portfolio</h4>
+                <h2 class="font-bold">My Recent Projects</h2>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="flex flex-wrap mb-11">
+              <div class="border border-slate-400 rounded-full">
+                <svg
+                  style="padding: 15px"
+                  class="w-12 h-12 md:w-16 md:h-16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.2721 10.2721C16.2721 12.4813 14.4813 14.2721 12.2721 14.2721C10.063 14.2721 8.27214 12.4813 8.27214 10.2721C8.27214 8.06298 10.063 6.27212 12.2721 6.27212C14.4813 6.27212 16.2721 8.06298 16.2721 10.2721ZM14.2721 10.2721C14.2721 11.3767 13.3767 12.2721 12.2721 12.2721C11.1676 12.2721 10.2721 11.3767 10.2721 10.2721C10.2721 9.16755 11.1676 8.27212 12.2721 8.27212C13.3767 8.27212 14.2721 9.16755 14.2721 10.2721Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.79417 16.5183C2.19424 13.0909 2.05438 7.39409 5.48178 3.79417C8.90918 0.194243 14.6059 0.054383 18.2059 3.48178C21.8058 6.90918 21.9457 12.6059 18.5183 16.2059L12.3124 22.7241L5.79417 16.5183ZM17.0698 14.8268L12.243 19.8965L7.17324 15.0698C4.3733 12.404 4.26452 7.97318 6.93028 5.17324C9.59603 2.3733 14.0268 2.26452 16.8268 4.93028C19.6267 7.59603 19.7355 12.0268 17.0698 14.8268Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="bg-slate-400 w-14 h-1 self-center mr-6"></div>
+              <!-- <div class="w-full pt-10"> -->
+              <div class="max-w-xl">
+                <h4 class="font-semibold uppercase mt-4">Portfolio</h4>
+                <h2 class="font-bold">My Recent Projects</h2>
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <form action="">
+              <div
+                class="flex w-full flex-wrap justify-center md:flex-nowrap md:gap-3"
+              >
+                <div class="w-full md:w-1/2">
+                  <label class="block" for="email">
+                    <span
+                      class="block font-semibold mb-2 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5"
+                      >Email</span
+                    >
+                    <input
+                      type="email"
+                      placeholder="Input email here..."
+                      id="email"
+                      class="peer px-3 py-5 border shadow-md w-full block text-md placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-500 invalid:focus:ring-red-500 invalid:focus:border-red-500 rounded-full"
+                    />
+                    <p
+                      class="text-sm m-1 text-red-500 invisible peer-invalid:visible"
+                    >
+                      Email Tidak Valid
+                    </p>
+                  </label>
+                </div>
+                <div class="w-full md:w-1/2">
+                  <label class="block" for="email">
+                    <span
+                      class="block font-semibold mb-2 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5"
+                      >Email</span
+                    >
+                    <input
+                      type="email"
+                      placeholder="Input email here..."
+                      id="email"
+                      class="peer px-3 py-5 border shadow-md w-full block text-md placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-500 invalid:focus:ring-red-500 invalid:focus:border-red-500 rounded-full"
+                    />
+                    <p
+                      class="text-sm m-1 text-red-500 invisible peer-invalid:visible"
+                    >
+                      Email Tidak Valid
+                    </p>
+                  </label>
+                </div>
+              </div>
+              <label class="block" for="email">
+                <span
+                  class="block font-semibold mb-2 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5"
+                  >Email</span
+                >
+                <input
+                  type="email"
+                  placeholder="Input email here..."
+                  id="email"
+                  class="peer px-3 py-5 border shadow-md w-full block text-md placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-500 invalid:focus:ring-red-500 invalid:focus:border-red-500 rounded-full"
+                />
+                <p
+                  class="text-sm m-1 text-red-500 invisible peer-invalid:visible"
+                >
+                  Email Tidak Valid
+                </p>
+              </label>
+              <label class="block" for="email">
+                <span
+                  class="block font-semibold mb-2 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5"
+                  >Message</span
+                >
+                <textarea
+                  type="email"
+                  placeholder="Input email here..."
+                  id="email"
+                  class="peer px-3 py-10 border shadow-md w-full block align-top text-md placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-500 invalid:focus:ring-red-500 invalid:focus:border-red-500 rounded-lg"
+                ></textarea>
+                <p
+                  class="text-sm m-1 text-red-500 invisible peer-invalid:visible"
+                >
+                  Email Tidak Valid
+                </p>
+              </label>
+              <!-- <button type="button" class="w-1/2 justify-end border border-black bg-green-500 text-black rounded-lg text-2xl">SEND</button> -->
+              <!-- <div class="text-right"> -->
+              <div class="flex items-center justify-end">
+                <p><span>*</span>Accept Terms & Condition</p>
+                <a
+                  href="#"
+                  class="inline-block border ml-5 border-primary text-primary p-2 rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                >
+                  SEND
+                </a>
+                <!-- </div> -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <hr class="bg-slate-300 h-[1px] mt-40" />
+    <footer id="footer" class="mt-10 bg-white">
+      <div class="container justify-center">
+        <div
+          class="flex w-full flex-wrap justify-center md:flex-nowrap md:gap-3"
+        >
+          <div
+            class="w-full flex justify-center items-center md:justify-start md:items-start md:w-1/3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mx-3"
+              x="0px"
+              y="0px"
+              width="24"
+              height="24"
+              viewBox="0 0 50 50"
+            >
+              <path
+                d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mx-3"
+              x="0px"
+              y="0px"
+              width="24"
+              height="24"
+              viewBox="0 0 50 50"
+            >
+              <path
+                d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              class="mx-3"
+              y="0px"
+              width="24"
+              height="24"
+              viewBox="0 0 50 50"
+            >
+              <path
+                d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"
+              ></path>
+            </svg>
+          </div>
+          <div class="w-full md:w-1/3 text-center md:text-right">
+            <h1>&copy; 2023 Fabyan Yastika Permana. All Right Reserved</h1>
+          </div>
+          <div class="w-full md:w-1/3 text-center md:text-right">
+            <h1>Developed by Fabyan</h1>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <div class="mb-10"></div>
+    <script>
+      // Initialization for ES Users
+      import { Collapse, initTE } from "tw-elements";
+
+      initTE({ Collapse });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="dist/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+  </body>
+</html>
