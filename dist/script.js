@@ -48,3 +48,47 @@ for(let i = 0; i<list.length; i++){
     }
     })
 }
+
+window.addEventListener('scroll', handleScroll);
+
+function handleScroll() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;  
+    var scrolled = (winScroll / height) * 100;
+  
+    document.getElementById("progressBar").style.width = scrolled + "%";
+}
+
+var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+// const checkbox = document.getElementById("checkbox")
+// checkbox.addEventListener("change", () => {
+//   document.body.classList.toggle("dark")
+// })
+
+// // Darkmode toggle
+// const darkToggle = document.querySelector('#dark-toggle');
+// const html = document.querySelector('html');
+
+// darkToggle.addEventListener('click', function () {
+//   if (darkToggle.checked) {
+//     html.classList.add('dark');
+//     localStorage.theme = 'dark';
+//   } else {
+//     html.classList.remove('dark');
+//     localStorage.theme = 'light';
+//   }
+// });

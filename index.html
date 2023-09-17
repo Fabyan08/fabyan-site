@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +21,16 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Jost:ital,wght@0,200;0,400;0,500;0,700;0,900;1,400;1,600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+<script src="https://kit.fontawesome.com/565fefc02a.js" crossorigin="anonymous"></script>
+<!-- <script>
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script> -->
     <!-- <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
       rel="stylesheet"
@@ -36,29 +46,81 @@
     ></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
   </head>
-  <body>
+  <body class="dark:bg-red">
     <style>
-      .navbar-fixed {
-  position: fixed;
-  z-index: 9999;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.7;
-  --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+      
+.checkbox {
+  opacity: 0;
+  position: absolute;
 }
 
-@media (prefers-color-scheme: dark) {
-  .navbar-fixed {
-    background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-    --tw-bg-opacity: 0.5;
-  }
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-    </style>
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+    .progress-bar {
+      z-index: 99999;
+    background: #2edf13;
+    height: 5px;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+    .navbar-fixed {
+      position: fixed;
+      z-index: 999;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      --tw-bg-opacity: 0.7;
+      --tw-backdrop-blur: blur(4px);
+      -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+              backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      .navbar-fixed {
+        background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+        --tw-bg-opacity: 0.5;
+      }
+    }</style>
+
+   
     <!-- Header Start-->
+    <div class="progress-bar" id="progressBar"></div>  
+
     <header
       class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
     >
+    
       <div class="container">
         <div class="flex items-center justify-between relative">
           <div class="px-4">
@@ -66,6 +128,21 @@
               ><img src="assets/logofix.png" alt="logo"
             /></a>
           </div>
+          <style>
+             #toggle:checked ~ label div.toggle-circle {
+              transform: translateX(0.75rem);
+
+  }
+          </style>
+         
+          <!-- <div>
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
+          </div> -->
           <div class="flex items-center px-4">
             <button
               id="hamburger"
@@ -166,8 +243,10 @@
               </ul>
             </nav>
           </div>
+          
         </div>
       </div>
+      
     </header>
     <!-- <div class="flex justify-end items-end  -z-99000">
       <div class="w-1/3 h-[400px] bg-primary">TES</div>
@@ -260,8 +339,8 @@
               data-aos-easing="ease-in-sine"
             >
               <h3 class="mt-4 md:text-2xl md:mt-4 md:hidden">
-                who have 2 years experience on learning and work as freelancer
-                website development.
+                who have 2 years experience on learning and work as freelance
+                website developer~
               </h3>
             </div>
             <div
@@ -402,7 +481,7 @@
         </div> -->
         <div class="flex flex-wrap">
           <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="relative mt-10 lg:right-0 lg:mt-9 mx-auto">
+            <div class="relative mt-10 lg:right-0 lg:mt-9 mx-auto" data-aos="fade-right" data-aos-duration="2000">
               <img
                 src="assets/abt.png"
                 alt="Sandhika Galih"
@@ -411,7 +490,7 @@
             </div>
           </div>
 
-          <div class="w-full self-end px-4 lg:w-1/2 pl-10">
+          <div class="w-full self-end px-4 lg:w-1/2 pl-10" data-aos="fade-left" data-aos-duration="2000">
             <h2 class="font-bold tracking-wide lg:text-3xl">Who Am I?</h2>
             <h1 class="text-4xl font-bold text-primary lg:text-7xl uppercase">
               About Me
@@ -472,10 +551,10 @@
     <!-- About Section End-->
 
     <!-- Portfolio Start -->
-    <section id="portfolio" class="pt-10 pb-16 bg-primary">
+    <section id="portfolio" class="pt-10 pb-16 bg-primary" data-aos="fade-up" data-aos-duration="2000">
       <div class="container mr-5">
         
-<!-- <style>
+<style>
   section ul{
     display: flex;
     justify-content: center;
@@ -490,12 +569,13 @@ section ul li{
     margin: 5px;
     letter-spacing: 1px;
     cursor: pointer;
+    font: 'jost';
 }
 section ul li.active{
-    background: #058dc7;
+    background: #0af263;
     color: #fff;
 }
-</style> -->
+</style>
 
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
@@ -506,16 +586,16 @@ section ul li.active{
               <span class="text-slate-100">My </span>Recent Projects
             </h2>
           </div>
-          <ul class="flex flex-wrap justify-center mb-[20px] items-center font-jost">
-            <li class="list active list-none bg-[#eee] p-[12px] m-[5px] cursor-pointer space-x-1 hover:bg-green-500 hover:text-white" data-filter="all">All</li>
-            <li class="list  list-none hover:bg-green-500 hover:text-white bg-[#eee] p-[12px] m-[5px] cursor-pointer space-x-1" data-filter="website">Web Dev</li>
-            <li class="list  list-none hover:bg-green-500 hover:text-white bg-[#eee] p-[12px] m-[5px] cursor-pointer space-x-1" data-filter="ui">UI UX Design</li>
-            <li class="list  list-none hover:bg-green-500 hover:text-white bg-[#eee] p-[12px] m-[5px] cursor-pointer space-x-1" data-filter="article">Article</li>
+          <ul>
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="website">Web Dev</li>
+            <li class="list" data-filter="ui">UI UX Design</li>
+            <li class="list" data-filter="article">Article</li>
         </ul>
         </div>
         <div class="w-full px-10 product">
           <div class="flex flex-wrap md:flex-nowrap md:gap-3 justify-center">
-            <div data-item="website"
+            <div data-item="website"  data-aos="flip-left" data-aos-duration="1000"
               id="card-container"
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -538,7 +618,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="website"
+            <div data-item="website"data-aos="flip-left" data-aos-duration="1200"
               id="card-container"
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -557,7 +637,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="website"
+            <div data-item="website" data-aos="flip-left" data-aos-duration="1400"
               id="card-container"
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -581,7 +661,7 @@ section ul li.active{
         <!-- Batas -->
         <div class="w-full px-10 product">
           <div class="flex flex-wrap md:flex-nowrap md:gap-3 justify-center">
-            <div data-item="website"
+            <div data-item="website"  data-aos="flip-right" data-aos-duration="1000"
               id="card-container"
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -601,7 +681,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="website"
+            <div data-item="website"  data-aos="flip-left" data-aos-duration="1000"
               id="card-container"
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -620,7 +700,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="ui"
+            <div data-item="ui"  data-aos="flip-right" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -644,7 +724,7 @@ section ul li.active{
         <!-- Batas -->
         <div class="w-full px-10 product">
           <div class="flex flex-wrap md:flex-nowrap md:gap-3 justify-center">
-            <div data-item="ui"
+            <div data-item="ui"  data-aos="flip-left" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -663,7 +743,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="ui"
+            <div data-item="ui"  data-aos="flip-right" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -682,7 +762,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="ui"
+            <div data-item="ui"  data-aos="flip-left" data-aos-duration="1000"
             id="card-container" 
             class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
           >
@@ -708,7 +788,7 @@ section ul li.active{
         </div>
         <div class="w-full px-10 product">
           <div class="flex flex-wrap md:flex-nowrap md:gap-3 justify-center">
-            <div data-item="ui"
+            <div data-item="ui"  data-aos="flip-left" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -726,8 +806,8 @@ section ul li.active{
                   UI UX Design for UI UX Competition at Ma Chung University.
                 </p>
               </div>
-            </div>
-            <div data-item="ui"
+            </div> 
+            <div data-item="ui"  data-aos="flip-right" data-aos-duration="1000"
             id="card-container" 
             class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
           >
@@ -746,7 +826,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="ui"
+            <div data-item="ui"  data-aos="flip-left" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -773,7 +853,7 @@ section ul li.active{
         <div class="w-full px-10 product">
           <div class="flex flex-wrap md:flex-nowrap md:gap-3 justify-center">
             <div data-item="article"
-            id="card-container" 
+            id="card-container"   data-aos="flip-left" data-aos-duration="1000"
             class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
           >
               <div class="rounded-lg overflow-hidden">
@@ -791,7 +871,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="article"
+            <div data-item="article"  data-aos="flip-right" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -810,7 +890,7 @@ section ul li.active{
                 </p>
               </div>
             </div>
-            <div data-item="article"
+            <div data-item="article"  data-aos="flip-left" data-aos-duration="1000"
               id="card-container" 
               class="mb-5 p-4 md:w-1/3 bg-white rounded-lg itemBox"
             >
@@ -963,6 +1043,19 @@ section ul li.active{
             </h2>
           </div>
         </div>
+        <div class="owl-carousel owl-theme">
+          <div class="item"><img class="w-64 rounded-lg border border-white" src="assets/activities/1.jpeg"></div>
+          <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/2.jpeg"></div>
+          <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/3.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/4.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/5.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/6.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/7.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/8.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/9.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/10.jpeg"></div>
+        <div class="item"><img class="w-64 rounded-lg"  src="assets/activities/11.jpeg"></div>
+      </div>
         <div
           class="flex w-full flex-wrap justify-center md:flex-nowrap md:gap-3"
         >
@@ -1115,61 +1208,7 @@ section ul li.active{
                 </div>
               </div>
             </div>
-            <!-- <div
-              class="rounded-lg border border-l-0 border-r-0 border-t-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 my-10"
-            >
-              <h2 class="mb-0" id="flush-headingOne">
-                <button
-                  class="group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none"
-                  type="button"
-                  data-te-collapse-init
-                  data-te-target="#pertama"
-                  aria-expanded="false"
-                  aria-controls="pertama"
-                >
-                  Accordion Item #1
-                  <span
-                    class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[40deg] fill-[#336dec] transition-transform duration-500 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white"
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
-                        fill="currentColor"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </h2>
-              <div
-                id="pertama"
-                class="rounded-lg border-solid border-b-4 border-green-600"
-                data-te-collapse-item
-                data-te-collapse-show
-                aria-labelledby="flush-headingOne"
-                data-te-parent="#accordionFlushExample"
-              >
-                <div class="px-5 py-4">
-                  Placeholder content for this accordion, which is intended to
-                  demonstrate the
-                  <code>.accordion-flush</code> class. This is the first item's
-                  accordion body.
-                </div>
-              </div>
-            </div> -->
+           
           </div>
           <div id="accordionFlushExample" class="rounded-lg w-full md:w-1/2">
             <div
@@ -1398,9 +1437,11 @@ section ul li.active{
         </div>
         <!-- BATAS -->
       </div>
+      
     </section>
+    
     <!-- Experience End -->
-
+   
     <!-- Contact Start -->
     <section id="contact" class="pt-10 pb-1">
       <div class="container">
@@ -1674,6 +1715,57 @@ section ul li.active{
     </footer>
     <!-- Footer End -->
 
+<!-- Back To Top -->
+<style>
+  #button {
+  display: inline-block;
+  background: rgba( 255, 255, 255, 0.5 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12px );
+-webkit-backdrop-filter: blur( 12px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+/* #button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+} */
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+</style>
+<a id="button"><img style="padding: 10px;" width="48" height="48" src="https://img.icons8.com/dusk/64/double-up.png" alt="double-up"/>
+
+</a>
+
+
+<!-- End Back To Top -->
+
     <div class="mb-10"></div>
     <script>
       // Initialization for ES Users
@@ -1684,9 +1776,33 @@ section ul li.active{
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
-        once: false
-      }); 
+  once: true, 
+}); 
     </script>
+    <!-- <script src="jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script>
+      var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items:4,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:700,
+        autoplayHoverPause:true
+    });
+    $('.play').on('click',function(){
+        owl.trigger('play.owl.autoplay',[1000])
+    })
+    $('.stop').on('click',function(){
+        owl.trigger('stop.owl.autoplay')
+    })
+    
+    </script>
+   
+    
+
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
     <script src="dist/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
